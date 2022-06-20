@@ -5,7 +5,10 @@
 </head>
 <body>
     <form action="" method="post">
+        {% csrf_token %}
         {{ form.as_p }}
+        <button class="btn btn-medium btn-fancy btn-dark-gray w-100" type="submit"> ورود</button>
+
     </form>
 </body>
 </html>
