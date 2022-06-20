@@ -30,6 +30,7 @@ ALLOWED_HOSTS = []
 
 DELAN_APPS = [
     'accounts',
+    'authenticate',
 ]
 
 DJANGO_APPS = [
