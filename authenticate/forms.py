@@ -7,6 +7,9 @@ class UserCreationForm(forms.ModelForm):
     class Meta:
         model = User
         fields = '__all__'
+        widgets = {
+            'password': forms.PasswordInput()
+        }
 
 
 class UserLoginForm(forms.Form):

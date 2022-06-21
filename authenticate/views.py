@@ -8,6 +8,11 @@ from authenticate.forms import UserCreationForm, UserLoginForm
 
 
 class RegisterView(CreateView):
+    def dispatch(self, request, *args, **kwargs):
+        if request.user.is_authenticated:
+            return redirect('home:home')
+        return super().dispatch(request, *args, *kwargs)
+
     form_class = UserCreationForm
     template_name = 'authenticate/register.html'
     success_url = reverse_lazy('authenticate:login')
@@ -39,5 +44,3 @@ class LoginView(View):
                 return redirect('home:home')
             return render(request, self.template_name, {'form': form})
         return render(request, self.template_name, {'form': form})
-
-
