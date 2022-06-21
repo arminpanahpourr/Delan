@@ -28,6 +28,10 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
+THIRD_APPS =[
+    'rest_framework'
+]
+
 DELAN_APPS = [
     'accounts',
     'authenticate',
@@ -42,7 +46,7 @@ DJANGO_APPS = [
     'django.contrib.staticfiles',
 ]
 
-INSTALLED_APPS = DJANGO_APPS + DELAN_APPS
+INSTALLED_APPS = DJANGO_APPS + DELAN_APPS + THIRD_APPS
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
